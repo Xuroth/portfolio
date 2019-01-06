@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "deploy": "node deploy.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +24,8 @@
     "moment": "^2.21.0",
     "mongodb": "^3.0.8",
     "morgan": "^1.9.1",
+    "node-cmd": "^3.0.0",
+    "node-ssh": "^5.1.2",
     "request-ip": "^2.0.2",
     "serve-favicon": "^2.5.0",
     "twilio": "^3.16.0"
