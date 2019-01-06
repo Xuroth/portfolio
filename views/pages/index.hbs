@@ -1,0 +1,133 @@
+{{#contentFor "css"}}
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
+{{/contentFor}}
+<div class="coding-background" data-simplebar>
+    <pre class="lang-js" ><code id="entry"></code></pre>
+    <div class="background-overlay">
+        <div id="loading-text-block">
+            <span>root@stephan-franz:~$</span>
+            <div id="loading-text">
+                <span id="text"></span>
+            </div>
+            <span id="loading-text-addon"></span>
+        </div>
+    </div>
+</div>
+
+
+{{#contentFor "js"}}
+<script src="/js/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.js"></script>
+{{!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script> --}}
+<script>
+    $().ready(function loadText(){
+        $('#loading-text-block').append('<div id="cursor"></div>');
+        let loadingLetters = [
+            'L', 'e', 't', '\'', 's', ' ', 'b', 'u', 'i', 'l', 'd', '&nbsp;'
+        ];
+        let i = 0;
+        (function loadingText (){
+            setTimeout(function(){
+               $('#loading-text #text').append('<span>' + loadingLetters[i] + '</span>');
+               i++;
+               if(i<loadingLetters.length) {
+                   loadingText();
+                } else {
+                    textRotater();
+                } 
+            }, 200)
+        })()
+        let words = [
+            'together',
+            'something amazing',
+            'agile',
+            'intelligently',
+            'creatively',
+            'lean'
+        ];
+        let j = 0;
+        let initialdelay = 1000;
+        function textRotater(){
+            
+            setTimeout(function() {
+                
+                $('#loading-text-addon').text(words[j]);
+                j++;
+                if(j >= words.length){
+                    j = 0;
+                    
+                }
+                initialdelay = 3500;
+                textRotater()
+            }, initialdelay)
+        }
+        
+    })
+    //hljs.initHighlightingOnLoad();
+    let codeExample = (req, res) => {
+    //Arrow Function
+
+}
+    let codeBlock = `
+//Generate temporary code for user
+router.get('/api/generateUserCode', (req, res) => {
+    //Ensure request contains userdata
+    if(req.body && req.body.user){
+        let user = req.body.user['username'];
+        //Lookup user in database
+        Users.findOne({username: user}).then( user => {
+            if(!user){
+                //No returned user matching submitted username;
+                let response = {
+                    status: 'error',
+                    message: 'Unable to locate user with supplied username'
+                };
+                res.status(404).json(response);
+            }
+            //Retrieved a valid user, generate one-time use code
+            user.code = UUID.generate();
+            user.save();
+            //Return success
+            let response = {
+                status: 'success',
+                message: 'Temporary user code was generated successfully.'
+            };
+            res.status(200).json(response);
+        })
+    }
+});
+
+module.exports = router;
+`;
+    //let codeBlock = codeExample.toString();
+    let codeToType = [];
+    let i = 0;
+    (function typeCode() {
+        setTimeout(function(){
+            $('#entry').append(codeBlock[i]);
+            Prism.highlightAll();
+            //Perform container smoothscroll only on line
+            // feed to improve performance
+            if(codeBlock[i] === '\n'){
+                
+                codeBackgroundScroll();
+            }
+            
+            i++;
+            if(i<codeBlock.length){
+                
+                typeCode();
+            }
+        }, 50);
+    })()
+
+    function codeBackgroundScroll(){
+        
+        $('#entry').parent().stop().animate({scrollTop: $('#entry').parent()[0].scrollHeight - $('#entry').parent()[0].clientHeight +14}, 100);
+    }
+    console.log($('#entry').parent()[0].scrollHeight)
+</script>
+
+<script></script>
+{{/contentFor}}

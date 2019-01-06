@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Stephan Franz</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/master.css">
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"/>
+        {{!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+        {{{block "css"}}}
+    </head>
+    <body>
+        {{> navigation }}
+        {{{body}}}
+        {{!-- <h4>Layout</h4> --}}
+        {{> footer }}
+        <script src="/js/jquery-3.3.1.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script defer src="https://pro.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-4Gm0M5DjJ0zGaEtLu0ztNIoHWiuJ5rKiaVlpZKeNqXAW49eIIa2ymxb3C4c3uEXR" crossorigin="anonymous"></script>
+        {{{block "js"}}}
+            {{!-- Custom Scripts --}}
+        <script>
+            $().ready(function() {
+                if(typeof pageTitle !== "undefined"){
+                    $('#page-title').text(pageTitle);
+                }
+            })
+        </script>
+    </body>
+</html>

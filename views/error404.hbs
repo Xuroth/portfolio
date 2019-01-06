@@ -1,0 +1,28 @@
+<div class="fullPage fullPageError" style="background-color: teal;">
+    <div class="error">
+        <h1>Error 404</h1>
+        <hr>
+        <p id="errorMsg"></p>
+    </div>
+</div>
+{{#contentFor "js"}}
+<script>
+    var errors = [
+        `Whatever you're looking for, it seems to have Houdini'd!`,
+        'Or... you finally reached the end of the internet! Great Job!',
+        'Hmm... This page has simply decided to <em>not</em> be...',
+        'Uh, what exactly were you looking for?',
+        'Woops!',
+        'Chicken Sandwich?',
+        'Well, this is awkward.',
+        `This page has left the nest`,
+        'Was this ever even here?!',
+        `Well, the 404 page was found. That's something at least.`,
+        `Sorry!`,
+    ];
+
+    var random = Math.floor(Math.random() * (errors.length));
+    document.getElementById('errorMsg').innerHTML = errors[random];
+    console.log(random);
+</script>
+{{/contentFor}}

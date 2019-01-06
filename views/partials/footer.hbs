@@ -1,0 +1,83 @@
+<div class="footer">
+    <section class="col-xs-12 col-md-3">
+        <p>Made with <i class="fal fa-heart"></i> by Stephan Franz</p>
+        <p>Full Disclaimer: I <button type="button" class="btn btn-link" data-toggle="modal" data-target="#disclosureModal" id="disclosuresBtn">used some libraries</button></p>
+    </section>
+    <section class="col-xs-12 col-md-3">
+        <ul class="social-links list-unstyled">
+            <li class="link-container">
+                <i class="fab fa-facebook"></i>
+                <span class="expanding-text">Facebook</span>
+            </li>
+            <li class="link-container">
+                <i class="fab fa-github"></i>
+                <span class="expanding-text">GitHub</span>
+            </li>
+            <li class="link-container">
+                <i class="fab fa-linkedin"></i>
+                <span class="expanding-text">LinkedIn</span>
+            </li>
+        </ul>
+    </section>
+</div>
+<div class="modal fade" id="disclosureModal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Full Disclosure
+                </h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>To save time and to prevent re-inventing the wheel, I used the following libraries. Note, I could replicate the features myself, but if there's a library/framework that matches the use-case, then it makes more sense to include it and focus on more important code.</p>
+                <ul class="list-unstyled library-cards">
+                    <li>
+                        <div class="library-card">
+                            <a href="https://getbootstrap.com/" class="library-card-title">Bootstrap v4.1</a>
+                            <div class="library-card-desc">
+                                Designed by Twitter, Bootstrap includes a responsive grid as well as many typography and content display components.
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="library-card">
+                            <a href="https://jquery.com/" class="library-card-title">jQuery v3.3.1</a>
+                            <div class="library-card-desc">
+                                Required by Bootstrap, this library provides a quick and easy selection mechanism for targetting DOM elements as well as animations, events, and more.
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="library-card">
+                            <a href="https://fontawesome.com/" class="library-card-title">FontAwesome Pro v5.6.3</a>
+                            <div class="library-card-desc">
+                                Stylistic vector icons totalling over <span class="underline">5,000</span> icons! Plus, I happen to have backed the project's KickStarter campaign, and have a Pro license.
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="library-card">
+                            <a href="https://daneden.github.io/animate.css/" class="library-card-title">Animate CSS v3.7.0</a>
+                            <div class="library-card-desc">
+                                <em>Quote from author: Just-add-water CSS Animations</em> Does what it says on the tin. Simple CSS classes to add fancy animations for item entrances, exits, and attention-grabbing!
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="library-card">
+                            <a href="https://prismjs.com" class="library-card-title">PrismJS v1.15.0</a>
+                            <div class="library-card-desc">
+                                Beautiful syntax-highlighting for <code>&lt;code&gt;&lt;/code&gt;</code> blocks.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <p>The backend of the site ("server") is an Express-powered NodeJS application with all the usual suspects. It also features a mini-REST api for fetching blog and project data, as well as Handlebars for server-side rendering the templates/layouts/partials/pages delivered to the client. Finally, it has a custom-built admin panel (not accessible to the general public, sorry!) I designed. And yes, I DID use another CSS framework for the panel, simply because I like the aesthetics.</p>
+                <p>Aside from the libraries/frameworks mentioned above, I built everything else, including custom CSS overrides for generic-looking Bootstrap components, the "Code Typing" and "Bash/Terminal Command" animations on the home page (pretty cool, eh?)</p>
+            </div>
+        </div>
+    </div>
+</div>
