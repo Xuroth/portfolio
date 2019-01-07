@@ -1,6 +1,6 @@
 const   MongoClient = require('mongodb').MongoClient,
         assert = require('assert'),
-        dbURI = process.env.DATABASE_URI;
+        dbURI = 'mongodb://localhost:27017/portfolio';//;
 
 MongoClient.connect(dbURI, (err, client) => {
     assert.equal(null, err);
