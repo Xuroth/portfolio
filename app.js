@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const flash = require('express-flash');
 const morgan = require('morgan');
+const path = require('path');
 const app = express();
 // var hbs = require('express-handlebars').create({defaultLayout: 'main', extname: '.hbs'});
 // const extend = require('handlebars-extend-block');
@@ -26,7 +27,7 @@ if(isProduction) {
 
 app.set('trust proxy', true);
 app.engine('.hbs', exphbs.express4({
-	partialsDir: __dirname + '/views/partials',
+	partialsDir: path.join(__dirname,'views/partials'),
 	layoutsDir: __dirname + '/views/layouts',
 	defaultLayout: __dirname + '/views/layouts/main'
 }));
