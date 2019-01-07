@@ -39,7 +39,7 @@ app.use(require('./middlewares/logger'));
 
 app.use(require('./controllers'));
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 // hbs.getPartials().then( data => {
 //     const partials = data;
 //     console.log(partials);
