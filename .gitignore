@@ -1,4 +1,5 @@
 /node_modules
+/portfolio
 portfolio.pem
 .env
 deploy.js

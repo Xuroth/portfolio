@@ -1,7 +1,7 @@
 //Base front-facing routes
 var express =   require('express'),
-    router  =   express.Router(),
-    baseModel =  require('../../models/baseModel');
+    router  =   express.Router();
+var    baseModel =  require('../../models/baseModel');
 
 router.get('/', (req, res) => {
     res.render('pages/index');
