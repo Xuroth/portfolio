@@ -32,7 +32,7 @@ app.engine('.hbs', exphbs.express4({
 	defaultLayout: __dirname + '/views/layouts/main'
 }));
 app.set('view engine', '.hbs');
-
+app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(require('./middlewares/logger'));
